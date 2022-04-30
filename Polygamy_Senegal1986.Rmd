@@ -8,6 +8,8 @@ abstract: "Mariama Ba has captured the woman's perspective on polygamy through h
 output:
   bookdown::pdf_document2
 toc: FALSE
+bibliography: references.bib
+nocite: '@*'
 ---
 
 ```{r setup, include=FALSE}
@@ -113,5 +115,8 @@ The text from the Demographic and Health Surveys (DHS) was originally in French,
 
 # References
 
+```{r}
+
+```
 
 
