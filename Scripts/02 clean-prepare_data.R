@@ -89,13 +89,13 @@ Other 29.8 50.0 45.8 51.0 59.1 71.0 50.0 49.1
 Instruction
 None 27.7 34.4 44.1 59.9 65.6 59.9 62.5 48.7
 Primary 12.5 29.2 31.4 47.9 52.9 * * 36.4
-Secondary + Li 22.2 12.8 26.7 45.5 * * 26.8
+Secondary + * 22.2 12.8 26.7 45.5 * * 26.8
 
 Literacy
 Cannot read 27.7 34.8 43.9 60.1 65.8 59.7 62.6 48.6
 Can read 13.0 22.7 23.1 35.6 48.1 * * 30.8
 Total 27.1 33.2 40.9 56.0 63.7 59.7 62.0 46.5
-ESF, 1978%* 30.6 35.5 46.5 57.7 56.5 65.5 64.8 48.5
+ESF, 1978%** 30.6 35.5 46.5 57.7 56.5 65.5 64.8 48.5
 
 *Less than 20 women
 **Enquête Sénégalaise sur la Fertility, 1978, Vol. I, p. 79, Direction de
@@ -132,3 +132,51 @@ Statistics, Surveys and Demography Division, Dakar, July 1981."
 
 df <- data.frame(demographic, group1, group2, group3, group4, group5, group6, group7, total)
 
+Sentable <-
+df |>
+  knitr::kable(
+    caption = "PERCENTAGE OF WOMEN CURRENTLY IN THE UNION WHO ARE IN POLYGAMOUS UNION ACCORDING TO CURRENT AGE AND SOCIO-DEMOGRAPHICS",
+    col.names = c("demographic", "group1","group2", "group3", "group4", "group5", "group6", "group7", "total"),
+    booktabs = TRUE,
+    linesep = ""
+  )
+
+Sentable(view)
+
+library(tidyverse)
+library(tidyr)
+library(janitor)
+#grabbed from week 9 class lecture
+column_names_as_contracts <-
+  df |>
+  rename(
+    "int_group1" = "group1",
+    "int_group2" = "group2",
+    "int_group3" = "group3",
+    "int_group4" = "group4",
+    "int_group5" = "group5",
+    "int_group6" = "group6",
+    "int_group7" = "group7",
+    "int_total" = "total",
+    "chr_demographic" = "demographic"
+  )
+
+#testing agent followng lecture
+install.packages("pointblank")
+library(pointblank)
+
+agent <- 
+  create_agent(tbl = column_names_as_contracts) %>%
+  col_is_character(columns = vars(chr_demographic)) %>%
+  col_vals_in_set(columns = chr_demographic,
+                  set = c("ESF_1978","Cannot Read")) %>%
+interrogate()
+
+agent1 <- 
+  create_agent(tbl = column_names_as_contracts) %>%
+  col_is_integer(columns = vars(int_group1, int_group2, int_group3, int_group4, int_group5, int_group6, int_group7, int_total)) %>%
+  col_vals_in_set(columns = int_group1,
+                  set = c(NA)) %>%
+interrogate()
+
+?pointblank
