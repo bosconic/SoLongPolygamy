@@ -88,6 +88,52 @@ text5 <- input %>%
 cat(text5)
 
 
+
+
+#Translated From Microsoft Azure text3 (The Chart)
+
+TABLE 2.2 PERCENTAGE OF WOMEN CURRENTLY IN THE UNION WHO ARE IN
+POLYGAMOUS UNION ACCORDING TO CURRENT AGE AND SOCIO-
+  DEMOGRAPHICS
+
+Current age of the woman
+
+Socio-demographic 15-19 20-24 25-29 30-34 35-39 40-44 45-49 Total
+
+Milieu
+Urban 23.8 25.2 31.3 49.6 60.9 54.2 55.0 41.4
+Rural 27.7 36.8 45.7 60.3 65.2 62.1 64.9 49.0
+
+Region
+West 23.5 29.6 30.3 48.7 57.4 54.3 55.3 49.0
+Centre 21.4 30.0 46.6 65.3 66.7 67.6 72.3 49.0
+Northeast 32.0 34.3 51.0 50.0 66.7 57.4 52.5 47.0
+South 39.7 48.4 41.6 59.0 68.3 53.5 58.5 51.7
+
+Ethnic group
+Wolof 28.6 27.5 43.3 60.4 69.4 68.3 80.2 50.1
+Poular 29.1 36.6 41.9 56.9 63.5 52.5 51.5 44.8
+Serer 14.3 25.0 30.4 49.0 50.0 56.0 52.6 38.0
+Mandingo 26.1 35.5 47.5 58.3 74.1 * * 48.8
+Diola * 57.1 33.3 44.4 52.2 * * 44.2
+Other 29.8 50.0 45.8 51.0 59.1 71.0 50.0 49.1
+
+Instruction
+None 27.7 34.4 44.1 59.9 65.6 59.9 62.5 48.7
+Primary 12.5 29.2 31.4 47.9 52.9 * * 36.4
+Secondary + * 22.2 12.8 26.7 45.5 * * 26.8
+
+Literacy
+Cannot read 27.7 34.8 43.9 60.1 65.8 59.7 62.6 48.6
+Can read 13.0 22.7 23.1 35.6 48.1 * * 30.8
+Total 27.1 33.2 40.9 56.0 63.7 59.7 62.0 46.5
+ESF, 1978%* 30.6 35.5 46.5 57.7 56.5 65.5 64.8 48.5
+
+*Less than 20 women
+**Enquête Sénégalaise sur la Fertility, 1978, Vol. I, p. 79, Direction de
+Statistics, Surveys and Demography Division, Dakar, July 1981.
+
+
 #Now we need to translate text 3, text 4 and 5 to understand what is happening, my french is not that strong.
 
 #After some further research and given the money and time constraints, I decided to ditch the hunt for a translation API and just use Microsoft Azure translate.

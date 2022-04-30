@@ -179,4 +179,7 @@ agent1 <-
                   set = c(NA)) %>%
 interrogate()
 
-?pointblank
+View(agent)
+
+
+  
