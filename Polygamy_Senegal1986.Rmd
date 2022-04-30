@@ -1,0 +1,117 @@
+---
+title: "Polygamy In Senegal"
+subtitle: "A Holitic View Of Polygamy In Senegal During the 1980's"
+author: "Nicholas Bosco"
+thanks: "Code and data are available at: LINK."
+date: "`r format(Sys.time(), '%d %B %Y')`"
+abstract: "Mariama Ba has captured the woman's perspective on polygamy through her semi-autobiographical novel, *So Long a Letter* which was first published in French 1980. The DHS Final Report Senegal was released in 1986 and published in French. The goal is to draw on the quantitative data (from the DHS Senegal) and qualitative data (from Ba's novel) to give the reader a better understanding of polygamy in Senegal during the 1980s. \\newline \\par \\textbf {Keywords:} Polygamy, Senegal, Fiction, DHS, Translation"
+output:
+  bookdown::pdf_document2
+toc: FALSE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+Paper is on: Polygamy
+
+Paper is about: Senegal in the 1980's
+
+Through-line: Senegal is a country full of rich culture, deeply rooted in faith and filled with literary giants like Mariama Ba, Ousmane Sembene and Leopold Senghor. With the use of descriptive statistics (qualitative and quantitative data). I argue that there is a compelling narrative here that is not solely qualitative nor quantitative here, I try to strike a balance between the two parts of descriptive statistics by looking at polygamy in Senegal during the 1980s. 
+
+- The idea for this paper was to link the story about the main character's attitudes towards polygamy with the data and maybe give some context to why the author of the book was writing about polygamy the way she does.
+- Polygamy being rooted in religious and cultural customs
+- In this case polygamy is one husband and many wives, but there are the cases where it is reverse just not in this context
+- DHS asking just three questions to get a sense of polygamy within the country
+- Mariama Ba's *So Long a Letter* is a semi-autobiographical novel on polygamy, she voices the main characters concern with polygamy and how it has ruined her relationship with her husband
+- From the novel biography on Ba from the novel: "A pioneer of women's rights, she became involved in several Senegalese women's organisations. Her commitment to eradicating inequalities between men and women in Africa let her to write *So Long a Letter*." [@citenovel]
+- Also from the biography: "A schoolteacher and inspector by profession, Ba promoted the crucial role of the writer in a developing country. She believed that the 'sacred mission' of the writer was to strike out 'at the archaic practices, traditions and customs that are not a real part of our precious cultural heritage'."[@citenovel]
+- Give the praise to R as it is how everything is possible
+- With some magicK (package that does OCR but better) we are able to whip this project up.
+
+
+# Data
+
+- Again thank R again
+- pitfalls can be my French, my reliance on translator
+- The Data sources Microsoft Azure Translate, SenegaDHS1986 and Mariama Ba's *So Long a Letter*
+- Got to give thanks to the almighty and most powerful R, the tidyr, tidyverse packages for being the pillars for which this research is built upon
+- Generate a pointblank (Using https://rich-iannone.github.io/pointblank/)
+- possibly generate r package for polygamy data?
+- "It is important to understand what the variables look like by including graphs, and possibly tables, of all observations, along with discussion of those graphs and the other features of these data." From Rubric
+- "Journey of the stats not the destination" From Rubric
+
+
+```{r }
+
+```
+
+# Results
+
+- need to produce data in order to talk about this
+- Polygamy is prominent in Senegal
+- Many ways to look at polygamy among different demographics (which both chart and polygamy blurb mention)
+- Is there a trend to follows polygamy?
+- "There should also be text associated with all these aspects. Show the reader the results by plotting them where possible. Talk about them. Explain them. That said, this section should strictly relay results." From Rubric
+- "In addition to conveying a sense of the dataset of interest, the data section should include details of the methodology used by the DHS you used, and its key features, strengths, and weaknesses." From Rubric
+
+# Discussion
+
+The text from the Demographic and Health Surveys (DHS) was originally in French, I had first thought to use an API to translate French to English. Given the time and financial constraints, I decided to just use Microsoft Azure translator function and scrap the API. But it would be interesting to impalement an API to translate Senegalese survey data from a more recent year to see if the polygamy trends continue. Another possible stream with this kind of work is to see the male perspective on polygamy through Ousmane Sembene's works like *Xala*.
+
+- Why people practice polygamy?
+  -positives to polygamy
+  -possible negatives
+- Religion in Senegal (Predominately Muslim population)
+- How are women viewed in Senegal during 1980's.
+- Family and Marriage
+- Polygamy, Polygyny and Polyandry (Multiple papers make the distinctions between the three words)
+- Connect So Long a Letter with DHS data present
+- "What is done in this this paper?" From Rubric
+- "What is something that we learn about the world?" From Rubric
+- "What is another thing that we learn about the world?" From Rubric
+- "What are some weaknesses of what was done?" From Rubric 
+- "What is left to learn or how should we proceed in the future?" From Rubric
+
+## First discussion point
+
+## Second discussion point
+
+## Third discussion point
+
+## Weaknesses and next steps
+
+```{r , echo=FALSE}
+
+```
+
+\newpage
+
+\appendix
+
+# Appendix {-}
+
+![page 15 of polygamy text part 1 DHS Senegal 1986](inputs/polygamie.png)
+
+![page 17 of polygamy text part 2 DHS Senegal 1986](inputs/polygamie2.png)
+
+![page 16 of polygamy table DHS Senegal 1986](inputs/SenDHS1986.png)
+
+![page 1 of Mariama Ba's Novel So Long a Letter](inputs/Mariama_Ba1.png)
+
+![Leopold Senghor's Poem Cher Frère Blanc](inputs/testsenghor.jpeg)
+
+# Additional details
+
+
+
+\newpage
+
+
+# References
+
+
+
