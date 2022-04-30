@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.27)  29 APR 2022 22:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.27)  30 APR 2022 00:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -481,22 +481,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--91
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 142.
 [2] [3]
-<inputs/polygamie.png, id=82, 1445.4pt x 903.375pt>
+<inputs/polygamie.png, id=83, 1445.4pt x 903.375pt>
 File: inputs/polygamie.png Graphic file (type png)
 <use inputs/polygamie.png>
 Package pdftex.def Info: inputs/polygamie.png  used on input line 225.
 (pdftex.def)             Requested size: 469.74944pt x 293.5934pt.
-<inputs/polygamie2.png, id=84, 910.40125pt x 393.47pt>
+<inputs/polygamie2.png, id=85, 910.40125pt x 393.47pt>
 File: inputs/polygamie2.png Graphic file (type png)
 <use inputs/polygamie2.png>
 Package pdftex.def Info: inputs/polygamie2.png  used on input line 231.
 (pdftex.def)             Requested size: 469.75789pt x 203.02655pt.
-<inputs/SenDHS1986.png, id=85, 1445.4pt x 903.375pt>
+<inputs/SenDHS1986.png, id=86, 1445.4pt x 903.375pt>
 File: inputs/SenDHS1986.png Graphic file (type png)
 <use inputs/SenDHS1986.png>
 Package pdftex.def Info: inputs/SenDHS1986.png  used on input line 237.
 (pdftex.def)             Requested size: 469.74944pt x 293.5934pt.
-<inputs/Mariama_Ba1.png, id=86, 2323.68124pt x 3500.07625pt>
+<inputs/Mariama_Ba1.png, id=87, 2323.68124pt x 3500.07625pt>
 File: inputs/Mariama_Ba1.png Graphic file (type png)
 <use inputs/Mariama_Ba1.png>
 Package pdftex.def Info: inputs/Mariama_Ba1.png  used on input line 243.
@@ -504,7 +504,7 @@ Package pdftex.def Info: inputs/Mariama_Ba1.png  used on input line 243.
 
 LaTeX Warning: Float too large for page by 23.90237pt on input line 245.
 
-<inputs/testsenghor.jpeg, id=87, 829.0975pt x 963.6pt>
+<inputs/testsenghor.jpeg, id=88, 829.0975pt x 963.6pt>
 File: inputs/testsenghor.jpeg Graphic file (type jpg)
 <use inputs/testsenghor.jpeg>
 Package pdftex.def Info: inputs/testsenghor.jpeg  used on input line 249.
@@ -516,16 +516,16 @@ Package rerunfilecheck Info: File `Polygamy_Senegal1986.out' has not changed.
 Here is how much of TeX's memory you used:
  11218 strings out of 480236
  175312 string characters out of 5894377
- 467960 words of memory out of 5000000
+ 469000 words of memory out of 5000000
  28938 multiletter control sequences out of 15000+600000
  537189 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,6n,63p,600b,392s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb>
-Output written on Polygamy_Senegal1986.pdf (8 pages, 8379888 bytes).
+Output written on Polygamy_Senegal1986.pdf (8 pages, 8382377 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
- 137 compressed objects within 2 object streams
+ 181 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
  36 named destinations out of 1000 (max. 500000)
  114 words of extra memory for PDF output out of 10000 (max. 10000000)
 

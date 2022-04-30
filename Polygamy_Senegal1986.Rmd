@@ -2,7 +2,7 @@
 title: "Polygamy In Senegal"
 subtitle: "A Holitic View Of Polygamy In Senegal During the 1980's"
 author: "Nicholas Bosco"
-thanks: "Code and data are available at: LINK."
+thanks: "Code and data are available at: https://github.com/bosconic/SoLongPolygamy"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 abstract: "Mariama Ba has captured the woman's perspective on polygamy through her semi-autobiographical novel, *So Long a Letter* which was first published in French 1980. The DHS Final Report Senegal was released in 1986 and published in French. The goal is to draw on the quantitative data (from the DHS Senegal) and qualitative data (from Ba's novel) to give the reader a better understanding of polygamy in Senegal during the 1980s. \\newline \\par \\textbf {Keywords:} Polygamy, Senegal, Fiction, DHS, Translation"
 output:
