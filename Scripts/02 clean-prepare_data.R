@@ -131,17 +131,4 @@ Statistics, Surveys and Demography Division, Dakar, July 1981."
 #create data frame for translated chart
 
 df <- data.frame(demographic, group1, group2, group3, group4, group5, group6, group7, total)
-class(group1)
-class(df$group1)= "Numeric"
-class(group1)
-
-#class for group 1 column in df will be numeric, but group1 itself is character
-
-#ID the dataframe variable you want then play with data itself.
-class(df$group1)
-
-#Change the groups 6 and 7 in df to numeric
-class(df$group6)= "Numeric"
-class(group6)
-
 
