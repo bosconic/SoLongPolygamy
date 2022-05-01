@@ -18,26 +18,22 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-Paper is on: Polygamy
+Senegal is a country full of rich culture, deeply rooted in faith and filled with literary giants like Mariama Ba, Ousmane Sembene and Leopold Senghor. With the use of descriptive statistics (qualitative and quantitative data). I argue that a compelling narrative here is not solely qualitative or quantitative. I try to balance the two parts of descriptive statistics by looking at Polygamy in Senegal during the 1980s. This report aims to link the story, *So Long a Letter* about the main character, Ramatoulaye, and her attitude experience with Polygamy. Then to compare the ideas touched on the many letters Ramatoulaye writes to her friend Aissatou with the data from the Senegal DHS report from 1986 and possibly give some context to why the author of the book was writing about Polygamy the way she does.
 
-Paper is about: Senegal in the 1980's
+From my reading of the novel, I had picked up that the union of Polygamy stems from both religion and culture. Religion because Ramatoulaye and many of the characters within the book practice Islam, they often recite the Qur'an, the main character's husband, Modou Fall, had asked the Imam to officiate the wedding. In the novel itself, Ramatoulaye questions her religion and opposes what she must do, like remarrying her younger brother-in-law, who had another wife. Culturally, Polygamy is practiced within the book by the characters' husbands (Tamir, Daouda, Mawdo, and Modou) seeking other wives; there was no mention of a woman seeing multiple husbands.
 
-Through-line: Senegal is a country full of rich culture, deeply rooted in faith and filled with literary giants like Mariama Ba, Ousmane Sembene and Leopold Senghor. With the use of descriptive statistics (qualitative and quantitative data). I argue that there is a compelling narrative here that is not solely qualitative nor quantitative here, I try to strike a balance between the two parts of descriptive statistics by looking at polygamy in Senegal during the 1980s. 
+I had chosen the DHS final report from Senegal 1986 because of how close (time-wise) the two significant artifacts for this report are. The book was written and published in French in 1979, but the English translation came out in 1981. Polygamy statistics were collected by DHS's final report data in 1986. Still, within the data, I noticed a row within one of the polygamy tables provided in the final report that draws on the ESF (Senegal Fertility Survey) conducted in 1978 [@Sen1986]. When researching this topic, I found no other sources comparing fiction with a report that had done this type of work before. Mariama Ba's *So Long a Letter* is a semi-autobiographical novel on Polygamy. She voices the main character's concern with Polygamy and how it has ruined her relationship with her husband. From the novel biography of the author Mariama Ba within the novel it mentions that she is: "A pioneer of women's rights, she became involved in several Senegalese women's organizations. Her commitment to eradicating inequalities between men and women in Africa let her write *So Long a Letter*" [@citenovel].
 
-- The idea for this paper was to link the story about the main character's attitudes towards polygamy with the data and maybe give some context to why the author of the book was writing about polygamy the way she does.
-- Polygamy being rooted in religious and cultural customs
-- In this case polygamy is one husband and many wives, but there are the cases where it is reverse just not in this context
-- DHS asking just three questions to get a sense of polygamy within the country
-- Mariama Ba's *So Long a Letter* is a semi-autobiographical novel on polygamy, she voices the main characters concern with polygamy and how it has ruined her relationship with her husband
-- From the novel biography on Ba from the novel: "A pioneer of women's rights, she became involved in several Senegalese women's organisations. Her commitment to eradicating inequalities between men and women in Africa let her to write *So Long a Letter*." [@citenovel]
-- Also from the biography: "A schoolteacher and inspector by profession, Ba promoted the crucial role of the writer in a developing country. She believed that the 'sacred mission' of the writer was to strike out 'at the archaic practices, traditions and customs that are not a real part of our precious cultural heritage'."[@citenovel]
-- Give the praise to R as it is how everything is possible
-- With some magicK (package that does OCR but better) we are able to whip this project up.
+Also, from the biography: "A schoolteacher and inspector by profession, Ba promoted the crucial role of the writer in a developing country. She believed that the 'sacred mission' of the writer was to strike out 'at the archaic practices, traditions and customs that are not a real part of our precious cultural heritage'"[@citenovel]. I mention this last quote because Ramatoulaye is also a schoolteacher whose goal is to be the best example for her kids and teach about her culture.
 
+This report would not have been able to have been produced if it was not for the statistical programming language "R" [@citeR]. In addition, a unique tool that has helped me convert the pdf images into the text to grab polygamy data was thanks to "magicK"[@citemagicK]. 
+
+One final note I should mention for the DHS final report, it was written in French. So I had many options to go about translating the document. Still, given the time and financial restraints, I had opted to translate the text after it was extracted using the "magicK" package to translate the text using the built-in translator in Microsoft Azure. So the level of understanding of the documents I engage with throughout our translations and not the original text could cause some minor issues with comprehension. Still, I feel it was a reasonable trade-off.
 
 # Data
 
 - Again thank R again
+- DHS asks just three questions to get a sense of Polygamy within the country
 - pitfalls can be my French, my reliance on translator
 - The Data sources Microsoft Azure Translate, SenegaDHS1986 and Mariama Ba's *So Long a Letter*
 - Got to give thanks to the almighty and most powerful R, the tidyr, tidyverse packages for being the pillars for which this research is built upon
@@ -96,15 +92,15 @@ The text from the Demographic and Health Surveys (DHS) was originally in French,
 
 # Appendix {-}
 
-![page 15 of polygamy text part 1 DHS Senegal 1986](inputs/polygamie.png)
+![page 15 of polygamy text part 1 DHS Senegal 1986 @Sen1986](inputs/polygamie.png)
 
-![page 17 of polygamy text part 2 DHS Senegal 1986](inputs/polygamie2.png)
+![page 17 of polygamy text part 2 DHS Senegal 1986 @Sen1986](inputs/polygamie2.png)
 
-![page 16 of polygamy table DHS Senegal 1986](inputs/SenDHS1986.png)
+![page 16 of polygamy table DHS Senegal 1986 @Sen1986](inputs/SenDHS1986.png)
 
-![page 1 of Mariama Ba's Novel So Long a Letter](inputs/Mariama_Ba1.png)
+![page 1 of Mariama Ba's Novel So Long a Letter @citenovel](inputs/Mariama_Ba1.png)
 
-![Leopold Senghor's Poem Cher Frère Blanc](inputs/testsenghor.jpeg)
+![Leopold Senghor's Poem Cher Frère Blanc @redditphoto](inputs/testsenghor.jpeg)
 
 # Additional details
 

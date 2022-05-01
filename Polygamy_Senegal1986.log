@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.27)  30 APR 2022 19:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.3.27)  30 APR 2022 21:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -483,38 +483,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
 {/Users/nicholasbosco/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 165.
+(Font)              <7> on input line 151.
 [2] [3]
 <inputs/polygamie.png, id=83, 1445.4pt x 903.375pt>
 File: inputs/polygamie.png Graphic file (type png)
 <use inputs/polygamie.png>
-Package pdftex.def Info: inputs/polygamie.png  used on input line 248.
+Package pdftex.def Info: inputs/polygamie.png  used on input line 234.
 (pdftex.def)             Requested size: 469.74944pt x 293.5934pt.
 <inputs/polygamie2.png, id=85, 910.40125pt x 393.47pt>
 File: inputs/polygamie2.png Graphic file (type png)
 <use inputs/polygamie2.png>
-Package pdftex.def Info: inputs/polygamie2.png  used on input line 254.
+Package pdftex.def Info: inputs/polygamie2.png  used on input line 240.
 (pdftex.def)             Requested size: 469.75789pt x 203.02655pt.
 <inputs/SenDHS1986.png, id=86, 1445.4pt x 903.375pt>
 File: inputs/SenDHS1986.png Graphic file (type png)
 <use inputs/SenDHS1986.png>
-Package pdftex.def Info: inputs/SenDHS1986.png  used on input line 260.
+Package pdftex.def Info: inputs/SenDHS1986.png  used on input line 246.
 (pdftex.def)             Requested size: 469.74944pt x 293.5934pt.
 <inputs/Mariama_Ba1.png, id=87, 2323.68124pt x 3500.07625pt>
 File: inputs/Mariama_Ba1.png Graphic file (type png)
 <use inputs/Mariama_Ba1.png>
-Package pdftex.def Info: inputs/Mariama_Ba1.png  used on input line 266.
+Package pdftex.def Info: inputs/Mariama_Ba1.png  used on input line 252.
 (pdftex.def)             Requested size: 431.78896pt x 650.38795pt.
 
-LaTeX Warning: Float too large for page by 23.90237pt on input line 268.
+LaTeX Warning: Float too large for page by 24.45795pt on input line 254.
 
 <inputs/testsenghor.jpeg, id=88, 829.0975pt x 963.6pt>
 File: inputs/testsenghor.jpeg Graphic file (type jpg)
 <use inputs/testsenghor.jpeg>
-Package pdftex.def Info: inputs/testsenghor.jpeg  used on input line 272.
+Package pdftex.def Info: inputs/testsenghor.jpeg  used on input line 258.
 (pdftex.def)             Requested size: 469.74402pt x 545.94946pt.
 [4 <./inputs/polygamie.png>] [5 <./inputs/polygamie2.png> <./inputs/SenDHS1986.png>] [6 <./inputs/Mariama_Ba1.png>] [7 <./inputs/testsenghor.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 317--319
+Underfull \hbox (badness 10000) in paragraph at lines 303--305
 \T1/lmr/m/n/10 / / www . reddit . com / r / francophonie / comments / gx3ur9 / po % C3 % A8me _ %C3 % A0 _ mon _ fr % C3 % A8re _
  []
 
@@ -529,9 +529,9 @@ Here is how much of TeX's memory you used:
  28948 multiletter control sequences out of 15000+600000
  537189 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,6n,63p,600b,392s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb>
-Output written on Polygamy_Senegal1986.pdf (8 pages, 8399435 bytes).
+ 60i,6n,63p,1187b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/nicholasbosco/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb>
+Output written on Polygamy_Senegal1986.pdf (8 pages, 8402165 bytes).
 PDF statistics:
  222 PDF objects out of 1000 (max. 8388607)
  179 compressed objects within 2 object streams
