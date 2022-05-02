@@ -132,16 +132,6 @@ Statistics, Surveys and Demography Division, Dakar, July 1981."
 
 df <- data.frame(demographic, group1, group2, group3, group4, group5, group6, group7, total)
 
-Sentable <-
-df |>
-  knitr::kable(
-    caption = "PERCENTAGE OF WOMEN CURRENTLY IN THE UNION WHO ARE IN POLYGAMOUS UNION ACCORDING TO CURRENT AGE AND SOCIO-DEMOGRAPHICS",
-    col.names = c("demographic", "group1","group2", "group3", "group4", "group5", "group6", "group7", "total"),
-    booktabs = TRUE,
-    linesep = ""
-  )
-
-Sentable(view)
 
 library(tidyverse)
 library(tidyr)
@@ -179,7 +169,9 @@ agent1 <-
                   set = c(NA)) %>%
 interrogate()
 
-View(agent)
+#To View the pointblank datasheets for data
+agent
+agent1
 
 
   
