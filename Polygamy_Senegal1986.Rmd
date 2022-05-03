@@ -19,6 +19,7 @@ library(kableExtra)
 library(tidyr)
 library(tidyverse)
 library(janitor)
+library(tibble)
 library(modelsummary)
 library(ggplot2)
 library(gt)
@@ -47,7 +48,7 @@ I had chosen the DHS final report from Senegal 1986 because of how close (time-w
 
 Also, from the biography: "A schoolteacher and inspector by profession, Ba promoted the crucial role of the writer in a developing country. She believed that the 'sacred mission' of the writer was to strike out 'at the archaic practices, traditions and customs that are not a real part of our precious cultural heritage'"[@citenovel]. I mention this last quote because Ramatoulaye is also a schoolteacher whose goal is to be the best example for her kids and teach about her culture.
 
-This report would not have been able to have been produced if it was not for the statistical programming language "R" [@citeR]. In addition, a unique tool that has helped me convert the pdf images into the text to grab polygamy data was thanks to "magicK"[@citemagicK].
+This report would not have been able to have been produced if it was not for the statistical programming language "R" [@citeR]. In addition, a unique tool that has helped me convert the pdf images into the text to grab polygamy data was thanks to "magicK"[@citemagicK]. This report tries to generate more information than what is seen originally on one table, by creating graphs and applying some secondary research the data collected becomes extremly powerful.
 
 One final note I should mention for the DHS final report, it was written in French. So I had many options to go about translating the document. Still, given the time and financial restraints, I had opted to translate the text after it was extracted using the "magicK" package to translate the text using the built-in translator in Microsoft Azure. So the level of understanding of the documents I engage with throughout our translations and not the original text could cause some minor issues with comprehension. Still, I feel it was a reasonable trade-off.
 
@@ -55,23 +56,22 @@ One final note I should mention for the DHS final report, it was written in Fren
 
 The sources for this data were heavily reliant on the novel *So Long A Letter* by Mariama Ba and the *Senegal DHS Final Report 1986 (FR34)* which was executed by @Sen1986. Within the DHS report this was the comments made by the authors of the survey:
 
-> *In the DHS, three questions are asked about polygamy. The first is to know whether the woman may or may not live in a polygamous household. Two others allow you to enter the number wives of the current husband (or partner) and the woman's rank in the current marriage if this one is polygamous.* -page 15 of DHS, @Sen1986
+> *In the DHS, three questions are asked about polygamy. The first is to know whether the woman may or may not live
+> in a polygamous household. Two others allow you to enter the number wives of the current husband (or partner) and the woman's rank in the current marriage if this one is polygamous.* -page 15 of DHS, @Sen1986
 
-This text above can be seen in the original french in the appendix in figure 1 but because I do not have a good command of the french language, I had to also rely on the help of a translator, More specifically the Microsoft Azure translator to translate the text verbatim. This also puts the interpretation of the data at a dis-advantage because rather having a person translate the text to pick up on the tone and nuances of the authors, I have to take the words at face-value so there might have been phases or certain keywords the automatic translator had just spewed from the words it recognizes making the findings more rigid and removed from a readers perspective.
+This text above can be seen in the original french in the appendix in figure 1. Still, because I do not have a good command of the french language, I had to also rely on the help of a translator, more precisely the Microsoft Azure translator, to translate the text verbatim. This also puts the interpretation of the data at a disadvantage because instead of having a person translate the text to pick up on the tone and nuances of the authors, I have to take the words at face value, so there might have been phases or specific keywords the automatic translator had just spewed from the words it recognizes making the findings more rigid and removed from a readers perspective.
 
-As for the content of the words within the quotation above, we can see the findings of @Sen1986 had decided to ask three questions about Polygamy to fully grasp the extent to which Polygamy was practiced in Senegal. Another point that should be mentioned about this survey was that the DHS final report was published in March 1988 but the data is focusing on the year 1986, this could mean that possibly the data collected within the survey had taken some time to wrangle and present for the reader. But this can also point to how surveys reflect the societies they enumerate, as they are just use snapshots like these surveys to generate strategies and solutions to better help the future generations.
+As for the content of the words within the quotation above, we can see the findings of @Sen1986 had decided to ask three questions about Polygamy to fully grasp the extent to which Polygamy was practiced in Senegal. Another point that should be mentioned about this survey was that the DHS final report was published in March 1988, but the data focuses on the year 1986; this could mean that possibly the data collected within the survey had taken some time to wrangle and present for the reader. But this can also point to how surveys reflect the societies they enumerate. They use snapshots like these surveys to generate strategies and solutions to help future generations better.
 
-Some of the other tools at my disposal to help with the presentation of the data here today are the Pointblank Validation Checkers @citepointblank, these tables which will be embedded in the appendixes figures 6 and 7 to show the validity to the data I had extracted using @citemagicK, @citeR. @citetidyr and @citetidyverse were for the help of cleaning the data.
+Some of the other tools at my disposal to help with the presentation of the data here today are the Pointblank Validation Checkers @citepointblank. These tables will be embedded in the appendixes figures 6 and 7 to show the validity of the data I had extracted using @citemagicK, @citeR. In addition, @citetidyr and @citetidyverse were for help cleaning the data.
 
--   "It is important to understand what the variables look like by including graphs, and possibly tables, of all observations, along with discussion of those graphs and the other features of these data." From Rubric
--   "Journey of the stats not the destination" From Rubric
+# Results
 
-```{r extractedtable, echo=FALSE}
-
+```{r extractedtable, fig.cap="Extracted table page.16 of DHS Senegal 1986", echo=FALSE}
+#changing the age ranges into groups to be easier to work with
 sentable <-
 senegal_data |>
-    gt(
-    caption = "TABLE 2.2 PERCENTAGE OF WOMEN CURRENTLY IN THE UNION WHO ARE IN POLYGAMOUS UNION ACCORDING TO CURRENT AGE AND SOCIO-DEMOGRAPHICS")|>
+    gt()|>
     cols_label(
       group1 = "15-19",
       group2 = "20-24",
@@ -82,13 +82,17 @@ senegal_data |>
       group7 = "45-49",
       total = "Total",
       demographic = "Socio-Demographic"
-      )
+      ) |>
+tab_header(
+  title = md("TABLE 2.2 PERCENTAGE OF WOMEN CURRENTLY IN THE UNION WHO ARE IN POLYGAMOUS UNION ACCORDING TO CURRENT AGE AND SOCIO-DEMOGRAPHICS"),
+  subtitle = md("Extracted From: Senegal DHS Final Report 1986")
+  )
 sentable
 ```
 
-This table was generated from what I had extracted from the Senegal DHS Final Report 1986 data on Polygamous Unions @Sen1986. The title and overall appearance of this table was gathered from figure 3 within the appendix. Generated using @citegt
+(Table \@ref(tab:extractedtable)) generated this table from what I had extracted from the Senegal DHS Final Report 1986 data on Polygamous Unions @Sen1986. The extracted table's gathered this table's title and overall appearance from figure 3 within the appendix and generated using @citegt. However, I miss a few notes and parts of the graph, the two essential footnotes. The first deals with the NA's within the original graph; the survey had an Asterix in specific cells of their graph to note that less than 20 women used to record the results. The second note deals with one of the Socio-Demographic answers; Within the chart, the Survey included the results of the Senegal Fertility Survey, which was conducted in 1978 to be used as a base comparison with all of the other data within the table. The table also misses the specific row headers used to divvy up the data into four categories: *Milieu*, *Region*, *Ethnic Group* and *Literacy*. I account for this by using these titles as the jumping-off point to compare the percentages collected to analyze the table better.
 
-```{r summarytable, echo=FALSE}
+```{r summarytable, fig.cap="Summary Table of extracted graph", echo=FALSE}
 # code from: https://www.tellingstorieswithdata.com/static-communication.html?q=tab#tables
 
 summary_table <-
@@ -98,74 +102,168 @@ column_names_as_contracts |>
 summary_table
 ```
 
-This is a summary table of the whole data frame created from the data from figure 3 within the appendix. The "int_groups" are the designated age ranges within the table extracted table above. The reason of changing the names within the age group categories. Generated using @citemodelsummary.
+(Table \@ref(tab:summarytable)) of the whole data frame created from the data from figure 3 within the appendix, the "int_groups" are the age ranges within the table extracted above. The reason for changing the names within the age group categories, they are generated using @citemodelsummary. The Summary table summarizes the integer columns of the graph from figure three. I generated a separate data frame for this summary table to illustrate each column's names better and give a sense of the numbers before being compared across different socio-demographics. What is quite fascinating here is the implementation of a histogram at the end of each summary to visualize better the overall trends of the percentages of polygamous unions across a particular age group. For example, the highest averages of Polygamous Unions come from groups 6 and 7. This means that roughly 60% of the women aged 40-44 and 45-49 are in a polygamous union within Senegal. But within the table, these two categories also have the most significant percentage of 'missing data.' 
 
-```{r milieu, echo=FALSE}
+
+```{r milieu, fig.cap="Milieu bar graph", echo=FALSE}
+#getting the desired data I want
 plot_milieu <-
   senegal_data |>
     filter(demographic == "Urban" | demographic == "Rural")
+
+
+#creates a dataframe that is easier to graph results
+dat <- 
+  plot_milieu |>
+  gather("group", "values", -demographic)
+
+
+#now the graphing
+senegal_graph1 <-
+    ggplot(dat, aes(group,values,fill = demographic)) +
+    geom_bar(stat = "identity", position = position_dodge()) +
+  theme_classic() +
+  labs( title = "Percentage of Women in Polygamous Unions by Milieu",
+        x = "Age Group", 
+        y = "Percentage of Women", 
+        Color = "Demographic",
+        caption = "Data Source: Senegal DHS Final Report 1986")
+senegal_graph1
  
 ```
-This graph shows the affects of milieu and its relation to polygamy.
+(Figure \@ref(fig:milieu)) shows the effects of milieu and its relation to polygamy. From what I can gather, the overall trend of polygamous unions tends to be greater in rural than urban settings. It is also interesting that group1 and group2 (15-19 and 20-24 respectively) in an urban setting and a rural setting have the lowest percentage of polygamous unions. The entire group within this graph also deduces that a more significant percentage of women in polygamous unions are from the rural parts of Senegal.
 
-```{r region, echo=FALSE}
+
+```{r region, fig.cap="Region bar graph", echo=FALSE}
+#choosing what I want to graph
 plot_region <-
   senegal_data |>
     filter(demographic == "West" | demographic == "Centre" | demographic == "Northeast" | demographic == "South")
-```
-This graph shows the affects of region and its relation to polygamy.
 
-```{r ethnic group, echo=FALSE}
+#rearranging results to graph chart
+dat1 <- 
+  plot_region |>
+  gather("group", "values", -demographic)
+
+
+#Add the parameters for the specific chart
+senegal_graph2 <-
+    ggplot(dat1, aes(group,values,fill = demographic)) +
+    geom_bar(stat = "identity", position = position_dodge()) +
+  theme_classic() +
+  labs( title = "Percentage of Women in Polygamous Unions by Region",
+        x = "Age Group", 
+        y = "Percentage of Women", 
+        Color = "Demographic",
+        caption = "Data Source: Senegal DHS Final Report 1986")
+senegal_graph2
+```
+(Figure \@ref(fig:region)) shows the effects of Region and its relation to polygamy. At first glance at the graph, we can see that dividing the data by Region does not give much to the viewer. Nevertheless, the Region Graph can make one broad conclusion that the percentage of polygamous unions is prominent throughout the country, no matter the Region. In the total category, all four regions seem to be reasonably close. Around 40% of the women asked in the survey admitted to being in a polygamous union. But what is interesting here is not the percentage of an individual region. Still, the age group with the highest amount of polygamy (percentage-wise) is group7, the 45-49 age range.
+
+
+```{r ethnicgroup, fig.cap="Ethnic Group bar graph", echo=FALSE}
+
+#choosing what I want to graph
 plot_ethnicgroup <-
   senegal_data |>
     filter (demographic == "Wolof" | demographic ==  "Poular" | demographic == "Serer" | demographic == "Mandingo" | demographic == "Diaola" | demographic == "Other")
-```
-This graph shows the affects of ethnic group and its relation to polygamy.
 
-```{r literacy, echo=FALSE}
+#rearranging results to graph chart
+dat2 <- 
+  plot_ethnicgroup |>
+  gather("group", "values", -demographic)
+
+
+#Add the parameters for the specific chart
+senegal_graph3 <-
+    ggplot(dat2, aes(group,values,fill = demographic)) +
+    geom_bar(stat = "identity", position = position_dodge()) +
+  theme_classic() +
+  labs( title = "Percentage of Women in Polygamous Unions by Ethnic Group",
+        x = "Age Group", 
+        y = "Percentage of Women", 
+        Color = "Demographic",
+        caption = "Data Source: Senegal DHS Final Report 1986")
+senegal_graph3
+```
+(Figure \@ref(fig:ethnicgroup))  shows the effects of Ethnic Group and its relation to polygamy. Within Senegal, there are five main distinct ethnic groups: Diaola, Mandingo, Poular, Serer and Wolof. One group is called the other, capturing all of the other women who did not identify with the other ethnic groups. What is interesting about this data is that there were five removed five rows containing 'missing values.' These values are not missing, but because I used NA to work around the lack of data, it has affected the output of the graph. More specifically, it has affected the representation of the Diaola ethnic group, as their data of women percentages seem to be less frequent than the Wolof ethnic group.
+
+
+```{r literacy, fig.cap="Literacy bar graph", echo=FALSE}
+#choosing what I want to graph
 plot_literacy <-
   senegal_data |>
     filter(demographic == "Cannot read" | demographic == "Can read")
 
+#rearranging results to graph chart
+dat3 <- 
+  plot_literacy |>
+  gather("group", "values", -demographic)
+
+
+#Add the parameters for the specific chart
+senegal_graph4 <-
+    ggplot(dat3, aes(group,values,fill = demographic)) +
+    geom_bar(stat = "identity", position = position_dodge()) +
+  theme_classic() +
+  labs( title = "Percentage of Women in Polygamous Unions by Literacy",
+        x = "Age Group", 
+        y = "Percentage of Women", 
+        Color = "Demographic",
+        caption = "Data Source: Senegal DHS Final Report 1986")
+senegal_graph4
+
 ```
-This graph shows the affects of literacy and its relation to ploygamy.
+(Figure \@ref(fig:literacy))  shows the effects of literacy and its relation to polygamy. When generating this graph, I was most curious about the result of this graph to see if there could be any critical insights into the effect of literacy on polygamous unions. The answer is a bit unclear as it somewhat shows the graph of the milieu presented. The younger age groups (group1 and group2) possess the lowest percentage of women in polygamous unions. However, there are two rows of 'missing data from the women who can read. As I have mentioned initially, because the number of women asked this question was low, The Enumerators could not generate the "percentage" of women with a good enough yield to describe the whole country. 
 
-# Results
-
--   need to produce data in order to talk about this
--   Polygamy is prominent in Senegal
--   Many ways to look at polygamy among different demographics (which both chart and polygamy blurb mention)
--   Is there a trend to follows polygamy?
--   "There should also be text associated with all these aspects. Show the reader the results by plotting them where possible. Talk about them. Explain them. That said, this section should strictly relay results." From Rubric
--   "In addition to conveying a sense of the dataset of interest, the data section should include details of the methodology used by the DHS you used, and its key features, strengths, and weaknesses." From Rubric
 
 # Discussion
 
-The text from the Demographic and Health Surveys (DHS) was originally in French, I had first thought to use an API to translate French to English. Given the time and financial constraints, I decided to just use Microsoft Azure translator function and scrap the API. But it would be interesting to impalement an API to translate Senegalese survey data from a more recent year to see if the polygamy trends continue. Another possible stream with this kind of work is to see the male perspective on polygamy through Ousmane Sembene's works like *Xala*.
+When I was growing up, I had no idea how complicated marriage and marriage unions are. I grew up thinking that everyone who was in a relationship and was married had only one spouse at a time; the word for this kind of marital union is called Monogamy. It does not help that my view of the world has been, for the most part, Euro-centric, so it was a bit of a culture shot when I had first learned about the term Polygamy and people who have multiple spouses. Then, when I was in my third year at the University of Toronto, taking the class *NEW354:African Culture and Development*, professor Aggrey Wasike gave a lecture dedicated to Marriage and Family within African Cultures. Within the class, I began to talk more deeply about Polygamy and how common polygamy is and how people have spent their lives trying to understand marriage systems as a whole. 
 
--   Why people practice polygamy? -positives to polygamy -possible negatives
--   Religion in Senegal (Predominately Muslim population)
--   How are women viewed in Senegal during 1980's.
--   Family and Marriage
--   Polygamy, Polygyny and Polyandry (Multiple papers make the distinctions between the three words)
--   Connect So Long a Letter with DHS data present
--   "What is done in this this paper?" From Rubric
--   "What is something that we learn about the world?" From Rubric
--   "What is another thing that we learn about the world?" From Rubric
--   "What are some weaknesses of what was done?" From Rubric
--   "What is left to learn or how should we proceed in the future?" From Rubric
+Now fast forward to my fourth year at the University of Toronto. I am now reflecting on Polygamy, but instead of the broad practice, I am just focusing on Senegal and how Polygamy is viewed within the country. First, from my research, I should note that polygamy is still considered legal in Senegal, and the people have a choice to be in a Monogamous or Polygamous Union @citepolygamyfacts. 
 
-## First discussion point
+Within many of the articles read, the term "Polygamy" is the umbrella term for one individual having multiple spouses. Still, there are specific terms to describe the type of Polygamous union, *Polyandry* refers to one woman having multiple husbands, and *Polygyny* refers to one man having multiple wives— @dorjahn_1962, @kringelbach_2016, @fortunato_2015, and @monaghanandjust. But there has been more research on Polygyny than Polyandry just because of the sheer number of cultures that practice one over the other. So to make things a bit easier for the reader, I will use the umbrella term Polygamy. Still, I am talking about polygyny, which is what is practiced in Senegal.
 
-## Second discussion point
+## Bridging the Gap Novel and Survey
+From the results above and the novel, the results can draw some parallels between the data and the story. Polygamy is practiced within Senegal can be for a multitude of reasons. Maybe the people involved believed heavily in cultural norms. Suppose many people around them are getting into polygamous unions. In that case, the idea of you joining one or creating one may not be as tough to manage if everyone involved in the idea is open to it. Possibly people want to practice Polygamy for the welfare of "population growth and the dissipation of land resources among heirs" [@monaghanandjust]. 
 
-## Third discussion point
+Viewing Polygamy from a perspective of religion, as @monaghanandjust point out: 
+
+> "Islamic law permits a man to have as many as four wives - although most Muslims are monogamous - so long as he 
+> is able to provide for them and treats them equally. In many instances of polygny, especially in Africa, each
+> wife has a seperate household, which the husband visits serially." -page 81 of *A Very Short Introduction: Social & Cultural Anthropology*, @monaghanandjust
+
+In *So Long a Letter* as Ramatoulaye is accounting for her sorrow of her husband's death to her friend Aissatou, she also mentions that her co-wife has a separate household in the country. Although Ramatoulaye was upset at her husband because she felt she was not being treated fairly, she did not even know about the introduction of her co-wife until the day of her wedding, as she remarks in her letters [@citenovel].
+
+Throughout the novel, you also get a chance to see what the female perspective is on polygamy. Looking first at the two main characters, Ramatoulaye and Aisstou, their approaches to polygamy were quite different. For example, as Aissatou found out her husband Mawdo had found himself a second wife, she divorced Mawdo. She focused on her education by continuing to read books and educating herself. Ramatoulaye writes to Aissatou, parsing her for her choice and the strength she has to do so @citenovel. This need for education as a source of "refuge," as Ramatoulaye puts it, can also be seen in the DHS Senegal Final Report. Within the report from the translated passage, the authors writing the insights on polygamy had this to say about education and its effect on the Union of Polygamy[@Sen1986]:
+
+> *"Urbanization and education appear to be very discriminating factors of
+> differentiation. Overall, polygamy is more prevalent in rural areas (49.0 per cent)
+> than in urban areas (41.4 per cent). The same situation prevails at all ages. Education is,
+> it too, a factor very unfavourable to polygamy. Women who have never been to school
+> are 48.7 per cent in polygamous unions, while those who have been to school are in
+> 36.4 per cent for primary level and 26.8 per cent for secondary level or higher. At
+> women who cannot read, 48.6 per cent are in polygamous unions compared to 30.8 per cent of
+> women who can read. The results already revealed by the ESF are confirmed: young women,
+> Urbanized and/or educated are less interested in polygamy"*  --page 15 and 17 of DHS, @Sen1986
+
+Ramatoulaye, on the other hand, when dealing with her husband's choice to marry a second wife after being together in a monogamous relationship for 25 years (I might add), she had decided to stay with the husband not find refuge in books. Still, she tries to lead by example for her children to encourage them not to be in a polygamous union to avoid heartache. And to also show what she is capable of doing as a woman. Even though Ramatoulaye and Aissatou are characters made up of Mariama Ba's imagination, the powerful themes and messages she was able to give to the reader still hold to this day. Although polygamy is still being practiced in Senegal, many people find themselves in the circumstances where the woman themselves finds it a bit more challenging to decide on their own as they have to deal with the country's cultural norms.
+
 
 ## Weaknesses and next steps
+As I have mentioned before in the introduction and data sections, the Demographic and Health Surveys (DHS) text was originally in French. I had first thought of using an API to translate French to English. However, given the time and financial constraints, I decided to use the Microsoft Azure translator function and scrap the API. But it would be interesting to implement an API to translate Senegalese survey data from a more recent year to see if the polygamy trends continue. Another possible stream with this kind of work is to see the male perspective on polygamy through Ousmane Sembene's works like *Xala*.
 
-```{r , echo=FALSE}
+Another point I should make is that this data is outdated, as the issues picked up within this report draw heavily during a time when Senegal was very young as a country (still is, compared to other countries), so with time, like most things Senegal may have resolved some issues, but others are still prominent.
 
-```
+A considerable weakness pointed out by Vernon Dorjahn in chapter 5 of *Continuity and Change In African Cultures* [@bascom_herskovits_1962] titled, *The Factor of Polygyny in African Demography* has alluded to "five obstacles to African Demography" @dorjahn_1962. The five obstacles are: 
+**"insufficient funds, 
+shortages of trained personnel, illiteracy, the fact that many Africans do not know how old they are, and the opposition to demographic research"** -page 87, *The Factor of Polygyny in African Demography* @dorjahn_1962.
+
+The issues @dorjahn_1962 raises in the chapter are pretty exciting. Still, he was writing during the 1960s, just as Senegal gained its independence. I disagreed with what he mentioned; the five obstacles he picks up are alarming, but I feel it has been fixed now in the 21st century. Still, during the time of the report [@Sen1986] and novel[@citenovel], illiteracy was high in Senegal, but not just Senegal; all across the continent as many countries were transitioning from a colonial to independent period also, especially among women, who were traditionally tended to their families and household. The lack of data collected in the DHS from specific age groups can be because of the opposition to demographic research. The shortages of trained personnel can also be another factor as it may be a huge task to do on your own, so relying on the base knowledge of others may be more challenging. With all of these concerns with the survey, I could still take away new insights from the data generated.
+
+# Acknowledgements
+I would like to take the time to thank a few people who had helped me with the conjuring up of this report. Shae-Linn, Oliver and Samita with all of your feedback and vast amount of patience, whether it be me calling late night with an R question(s), To asking questions about how to put "something up" onto github, generating the data frames used here, more importantly, to being a collective voice of reason when I try to wrangle this project I had taken upon myself to complete. I would also like to give a huge thanks to Lorena, Athaliah, Min, George and Sampson for their comments made on the construction of this paper as well. I am very grateful for their wisdom and knowledge, even though words cannot express this fully enough but this is an attempt. 
 
 \newpage
 
@@ -191,146 +289,6 @@ The text from the Demographic and Health Surveys (DHS) was originally in French,
 
 # Additional details
 
-Extract of the questions from @gebru2021datasheets
-
-
-**Motivation**
-
-1. *For what purpose was the dataset created? Was there a specific task in mind? Was there a specific gap that needed to be filled? Please provide a description.*
-    - The dataset was created to enable insight of the population trends of Polygamy in Senegal. Being in the western part of the world, I would hear about Polygamy being practiced in some parts of West Africa but never really knew how prominent polygamy was. Though this data was collected in the 1980s so it may be a bit outdated but I think it is all the more reason to look, to possible give insight to the trends of polygamy in the past.
-2. *Who created the dataset (for example, which team, research group) and on behalf of which entity (for example, company, institution, organization)?*
-    - The data itself was created by "Ndiaye, Salif, Ibrahima Sarr, and Mohamed Ayad. 1988. 1986 Senegal Demographic and Health Survey. Dakar, Senegal: Ministry of Economy and Finance Direction de la Statistique Division des Enquêtes et de la Démographie/Senegal and the Institute for Resource Development/Westinghouse"[@Sen1986]. This was from the reccomended citation from the website [SENDHS1986](https://dhsprogram.com/publications/publication-fr34-dhs-final-reports.cfm)
-    - But I, Nicholas Bosco who is a part of the "World Becomes Data Research School" had been given this task to create the dataset.
-3. *Who funded the creation of the dataset? If there is an associated grant, please provide the name of the grantor and the grant name and number.*
-    - No one had funded me to generate the dataset.
-4. *Any other comments?*
-    - NA
-
-**Composition**
-
-1. *What do the instances that comprise the dataset represent (for example, documents, photos, people, countries)? Are there multiple types of instances (for example, movies, users, and ratings; people and interactions between them; nodes and edges)? Please provide a description.*
-	- Within the data itself it just deals with people and their willingness to share an intimate part of their lives in order to be enumerated. So the enumerator who was collecting said information had a lot of responsibility. Also for the specific data sheet here it deals with percentages rather than number of people.
-2. *How many instances are there in total (of each type, if appropriate)?*
-	- TBD
-3. *Does the dataset contain all possible instances or is it a sample (not necessarily random) of instances from a larger set? If the dataset is a sample, then what is the larger set? Is the sample representative of the larger set (for example, geographic coverage)? If so, please describe how this representativeness was validated/verified. If it is not representative of the larger set, please describe why not (for example, to cover a more diverse range of instances, because instances were withheld or unavailable).*
-	- The data attempts to capture the whole country of Senegal, however within the data itself it is a sample size as it captures only a large percentage of the country. Varying from different demographics woman identify with.
-4. *What data does each instance consist of? "Raw" data (for example, unprocessed text or images) or features? In either case, please provide a description.*
-	- NA
-5. *Is there a label or target associated with each instance? If so, please provide a description.*
-	- NA
-6. *Is any information missing from individual instances? If so, please provide a description, explaining why this information is missing (for example, because it was unavailable). This does not include intentionally removed information, but might include, for example, redacted text.*
-	- Yes, Within the data there is there was a comment made about some women who identified within a certain age range who posses one of the desired socio-demographics might not have been significant enough to be mentioned as a percentage, or that there were very few people who fit into a specific category matching the age and their socio-demographic so it was hard to generate a percentage that is a good representation of the country's woman population.
-7. *Are relationships between individual instances made explicit (for example, users' movie ratings, social network links)? If so, please describe how these relationships are made explicit.*
-	- TBD
-8. *Are there recommended data splits (for example, training, development/validation, testing)? If so, please provide a description of these splits, explaining the rationale behind them.*
-	- TBD
-9. *Are there any errors, sources of noise, or redundancies in the dataset? If so, please provide a description.*
-	- There are a few errors noted when looking at the data, firstly there can be a possiblity of double counting women if you try to specify the parameters of the question. For example the socio-demographics are divided according to Milieu, Region, Ethnic Group, Instruction and Literacy. But what if i wanted to know about the percentage of women who are in a polygamous relationship from who identify as Wolof, who can read and had a secondary education. The data does not account for that kind of accuracy.
-10. *Is the dataset self-contained, or does it link to or otherwise rely on external resources (for example, websites, tweets, other datasets)? If it links to or relies on external resources, a) are there guarantees that they will exist, and remain constant, over time; b) are there official archival versions of the complete dataset (that is, including the external resources as they existed at the time the dataset was created); c) are there any restrictions (for example, licenses, fees) associated with any of the external resources that might apply to a dataset consumer? Please provide descriptions of all external resources and any restrictions associated with them, as well as links or other access points, as appropriate.*
-	- In order to access the translated data, you would have to have access to a translator software. If you prefer the original french data and you would like to electronically use it at your will, you would need a tool that is able to run OCR on the document in order to import the document. 
-	- The links I had used for the data are as follows: [SENDHS1986](https://dhsprogram.com/publications/publication-fr34-dhs-final-reports.cfm),[R programming language](https://www.rstudio.com), and [Microsoft Azure](https://azure.microsoft.com/en-us/services/cognitive-services/translator/#customer-stories)
-	
-11. *Does the dataset contain data that might be considered confidential (for example, data that is protected by legal privilege or by doctor-patient confidentiality, data that includes the content of individuals' non-public communications)? If so, please provide a description.*
-	- TBD
-12. *Does the dataset contain data that, if viewed directly, might be offensive, insulting, threatening, or might otherwise cause anxiety? If so, please describe why.*
-	- TBD
-13. *Does the dataset identify any sub-populations (for example, by age, gender)? If so, please describe how these subpopulations are identified and provide a description of their respective distributions within the dataset.*
-	- TBD
-14. *Is it possible to identify individuals (that is, one or more natural persons), either directly or indirectly (that is, in combination with other data) from the dataset? If so, please describe how.*
-	- TBD
-15. *Does the dataset contain data that might be considered sensitive in any way (for example, data that reveals race or ethnic origins, sexual orientations, religious beliefs, political opinions or union memberships, or locations; financial or health data; biometric or genetic data; forms of government identification, such as social security numbers; criminal history)? If so, please provide a description.*
-	- TBD
-16. *Any other comments?*
-	- TBD
-
-**Collection process**
-
-1. *How was the data associated with each instance acquired? Was the data directly observable (for example, raw text, movie ratings), reported by subjects (for example, survey responses), or indirectly inferred/derived from other data (for example, part-of-speech tags, model-based guesses for age or language)? If the data was reported by subjects or indirectly inferred/derived from other data, was the data validated/verified? If so, please describe how.*
-	- TBD
-2. *What mechanisms or procedures were used to collect the data (for example, hardware apparatuses or sensors, manual human curation, software programs, software APIs)? How were these mechanisms or procedures validated?*
-	- TBD
-3. *If the dataset is a sample from a larger set, what was the sampling strategy (for example, deterministic, probabilistic with specific sampling probabilities)?*
-	- TBD
-4. *Who was involved in the data collection process (for example, students, crowdworkers, contractors) and how were they compensated (for example, how much were crowdworkers paid)?*
-	- TBD
-5. *Over what timeframe was the data collected? Does this timeframe match the creation timeframe of the data associated with the instances (for example, recent crawl of old news articles)? If not, please describe the timeframe in which the data associated with the instances was created.*
-	- TBD
-6. *Were any ethical review processes conducted (for example, by an institutional review board)? If so, please provide a description of these review processes, including the outcomes, as well as a link or other access point to any supporting documentation.*
-	- TBD
-7. *Did you collect the data from the individuals in question directly, or obtain it via third parties or other sources (for example, websites)?*
-	- TBD
-8. *Were the individuals in question notified about the data collection? If so, please describe (or show with screenshots or other information) how notice was provided, and provide a link or other access point to, or otherwise reproduce, the exact language of the notification itself.*
-	- TBD
-9. *Did the individuals in question consent to the collection and use of their data? If so, please describe (or show with screenshots or other information) how consent was requested and provided, and provide a link or other access point to, or otherwise reproduce, the exact language to which the individuals consented.*
-	- TBD
-10. *If consent was obtained, were the consenting individuals provided with a mechanism to revoke their consent in the future or for certain uses? If so, please provide a description, as well as a link or other access point to the mechanism (if appropriate).*
-	- TBD
-11. *Has an analysis of the potential impact of the dataset and its use on data subjects (for example, a data protection impact analysis) been conducted? If so, please provide a description of this analysis, including the outcomes, as well as a link or other access point to any supporting documentation.*
-	- TBD
-12. *Any other comments?*
-	- TBD
-
-**Preprocessing/cleaning/labeling**
-
-1. *Was any preprocessing/cleaning/labeling of the data done (for example, discretization or bucketing, tokenization, part-of-speech tagging, SIFT feature extraction, removal of instances, processing of missing values)? If so, please provide a description. If not, you may skip the remaining questions in this section.*
-	- TBD
-2. *Was the "raw" data saved in addition to the preprocessed/cleaned/labeled data (for example, to support unanticipated future uses)? If so, please provide a link or other access point to the "raw" data.*
-	- TBD
-3. *Is the software that was used to preprocess/clean/label the data available? If so, please provide a link or other access point.*
-	- TBD
-4. *Any other comments?*
-	- TBD
-
-**Uses**
-
-1. *Has the dataset been used for any tasks already? If so, please provide a description.*
-	- TBD
-2. *Is there a repository that links to any or all papers or systems that use the dataset? If so, please provide a link or other access point.*
-	- TBD
-3. *What (other) tasks could the dataset be used for?*
-	- TBD
-4. *Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses? For example, is there anything that a dataset consumer might need to know to avoid uses that could result in unfair treatment of individuals or groups (for example, stereotyping, quality of service issues) or other risks or harms (for example, legal risks, financial harms)? If so, please provide a description. Is there anything a dataset consumer could do to mitigate these risks or harms?*
-	- TBD
-5. *Are there tasks for which the dataset should not be used? If so, please provide a description.*
-	- TBD
-6. *Any other comments?*
-	- TBD
-
-**Distribution**
-
-1. *Will the dataset be distributed to third parties outside of the entity (for example, company, institution, organization) on behalf of which the dataset was created? If so, please provide a description.*
-	- TBD
-2. *How will the dataset be distributed (for example, tarball on website, API, GitHub)? Does the dataset have a digital object identifier (DOI)?*
-	- TBD
-3. *When will the dataset be distributed?*
-	- TBD
-4. *Will the dataset be distributed under a copyright or other intellectual property (IP) license, and/or under applicable terms of use (ToU)? If so, please describe this license and/ or ToU, and provide a link or other access point to, or otherwise reproduce, any relevant licensing terms or ToU, as well as any fees associated with these restrictions.*
-	- TBD
-5. *Have any third parties imposed IP-based or other restrictions on the data associated with the instances? If so, please describe these restrictions, and provide a link or other access point to, or otherwise reproduce, any relevant licensing terms, as well as any fees associated with these restrictions.*
-	- TBD
-6. *Do any export controls or other regulatory restrictions apply to the dataset or to individual instances? If so, please describe these restrictions, and provide a link or other access point to, or otherwise reproduce, any supporting documentation.*
-	- TBD
-7. *Any other comments?*
-	- TBD
-
-**Maintenance**
-
-1. *Who will be supporting/hosting/maintaining the dataset?*
-	- TBD
-2. *How can the owner/curator/manager of the dataset be contacted (for example, email address)?*
-	- TBD
-3. *Is there an erratum? If so, please provide a link or other access point.*
-	- TBD
-4. *Will the dataset be updated (for example, to correct labeling errors, add new instances, delete instances)? If so, please describe how often, by whom, and how updates will be communicated to dataset consumers (for example, mailing list, GitHub)?*
-	- TBD
-5. *If the dataset relates to people, are there applicable limits on the retention of the data associated with the instances (for example, were the individuals in question told that their data would be retained for a fixed period of time and then deleted)? If so, please describe these limits and explain how they will be enforced.*
-	- TBD
-6. *Will older versions of the dataset continue to be supported/hosted/maintained? If so, please describe how. If not, please describe how its obsolescence will be communicated to dataset consumers.*
-	- TBD
-7. *If others want to extend/augment/build on/contribute to the dataset, is there a mechanism for them to do so? If so, please provide a description. Will these contributions be validated/verified? If so, please describe how. If not, why not? Is there a process for communicating/distributing these contributions to dataset consumers? If so, please provide a description.*
-	- TBD
-8. *Any other comments?*
-	- TBD
 
 \newpage
 
