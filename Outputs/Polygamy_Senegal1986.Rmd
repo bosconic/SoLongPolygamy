@@ -90,7 +90,7 @@ tab_header(
 sentable
 ```
 
-(Table \@ref(tab:extractedtable)) generated this table from what I had extracted from the Senegal DHS Final Report 1986 data on Polygamous Unions @Sen1986. The extracted table's gathered this table's title and overall appearance from figure 3 within the appendix and generated using @citegt. However, I miss a few notes and parts of the graph, the two essential footnotes. The first deals with the NA's within the original graph; the survey had an Asterix in specific cells of their graph to note that less than 20 women used to record the results. The second note deals with one of the Socio-Demographic answers; Within the chart, the Survey included the results of the Senegal Fertility Survey, which was conducted in 1978 to be used as a base comparison with all of the other data within the table. The table also misses the specific row headers used to divvy up the data into four categories: *Milieu*, *Region*, *Ethnic Group* and *Literacy*. I account for this by using these titles as the jumping-off point to compare the percentages collected to analyze the table better.
+(Table \@ref(tab:extractedtable)) generated this table from what I had extracted from the Senegal DHS Final Report 1986 data on Polygamous Unions @Sen1986. The extracted table's gathered this table's title and overall appearance from figure 3 within the appendix and generated using @citegt. However, I miss a few notes and parts of the graph, the two essential footnotes. The first deals with the NA's within the original graph; the survey had an Asterix in specific cells of their graph to note that less than 20 women used to record the results. The second note deals with one of the Socio-Demographic answers; Within the chart, the Survey included the results of the Senegal Fertility Survey, which was conducted in 1978 to be used as a base comparison with all of the other data within the table. The table also misses the specific row headers used to divvy up the data into five categories: *Milieu*, *Region*, *Ethnic Group*, *Instruction* and *Literacy*. I account for this by using these titles as the jumping-off point to compare the percentages collected to analyze the table better.
 
 ```{r summarytable, fig.cap="Summary Table of extracted graph", echo=FALSE}
 # code from: https://www.tellingstorieswithdata.com/static-communication.html?q=tab#tables
@@ -188,6 +188,34 @@ senegal_graph3
 ```
 (Figure \@ref(fig:ethnicgroup))  shows the effects of Ethnic Group and its relation to polygamy. Within Senegal, there are five main distinct ethnic groups: Diaola, Mandingo, Poular, Serer and Wolof. One group is called the other, capturing all of the other women who did not identify with the other ethnic groups. What is interesting about this data is that there were five removed five rows containing 'missing values.' These values are not missing, but because I used NA to work around the lack of data, it has affected the output of the graph. More specifically, it has affected the representation of the Diaola ethnic group, as their data of women percentages seem to be less frequent than the Wolof ethnic group.
 
+```{r instruction, fig.cap="Instruction bar graph", echo=FALSE}
+#getting the desired data I want
+plot_instruction <-
+  senegal_data |>
+    filter(demographic == "None" | demographic == "Primary" | demographic == "Secondary +")
+
+
+#creates a dataframe that is easier to graph results
+dat4 <- 
+  plot_instruction |>
+  gather("group", "values", -demographic)
+
+
+#now the graphing
+senegal_graph5 <-
+    ggplot(dat4, aes(group,values,fill = demographic)) +
+    geom_bar(stat = "identity", position = position_dodge()) +
+  theme_classic() +
+  labs( title = "Percentage of Women in Polygamous Unions by Instruction",
+        x = "Age Group", 
+        y = "Percentage of Women", 
+        Color = "Demographic",
+        caption = "Data Source: Senegal DHS Final Report 1986")
+senegal_graph5
+ 
+```
+(Figure \@ref(fig:instruction)) shows the effects of instruction and its relation to polygamy. These results show the overall level of instruction a vast percentage of women in polygamous relationships had in Senegal during the 1980s. Some of the "missing" bars for women with "Primary" and "Secondary +" levels of instruction may be because of how @Sen1986 extracted the data when the enumerators and survey employees were gathering data. The overall education trend within the country seems to increase as the age group gets younger. There was also a increase of women having a "Secondary +" level of education in group5, this age group is the "35-39" year old age range.
+
 
 ```{r literacy, fig.cap="Literacy bar graph", echo=FALSE}
 #choosing what I want to graph
@@ -214,7 +242,7 @@ senegal_graph4 <-
 senegal_graph4
 
 ```
-(Figure \@ref(fig:literacy))  shows the effects of literacy and its relation to polygamy. When generating this graph, I was most curious about the result of this graph to see if there could be any critical insights into the effect of literacy on polygamous unions. The answer is a bit unclear as it somewhat shows the graph of the milieu presented. The younger age groups (group1 and group2) possess the lowest percentage of women in polygamous unions. However, there are two rows of 'missing data from the women who can read. As I have mentioned initially, because the number of women asked this question was low, The Enumerators could not generate the "percentage" of women with a good enough yield to describe the whole country. 
+(Figure \@ref(fig:literacy)) shows the effects of literacy and its relation to polygamy. When generating this graph, I was most curious about the result of this graph to see if there could be any critical insights into the effect of literacy on polygamous unions. The answer is a bit unclear as it somewhat shows the graph of the milieu presented. The younger age groups (group1 and group2) possess the lowest percentage of women in polygamous unions. However, there are two rows of 'missing data from the women who can read. As I have mentioned initially, because the number of women asked this question was low, The Enumerators could not generate the "percentage" of women with a good enough yield to describe the whole country. 
 
 
 # Discussion
@@ -236,7 +264,7 @@ Viewing Polygamy from a perspective of religion, as @monaghanandjust point out:
 
 In *So Long a Letter* as Ramatoulaye is accounting for her sorrow of her husband's death to her friend Aissatou, she also mentions that her co-wife has a separate household in the country. Although Ramatoulaye was upset at her husband because she felt she was not being treated fairly, she did not even know about the introduction of her co-wife until the day of her wedding, as she remarks in her letters [@citenovel].
 
-Throughout the novel, you also get a chance to see what the female perspective is on polygamy. Looking first at the two main characters, Ramatoulaye and Aisstou, their approaches to polygamy were quite different. For example, as Aissatou found out her husband Mawdo had found himself a second wife, she divorced Mawdo. She focused on her education by continuing to read books and educating herself. Ramatoulaye writes to Aissatou, parsing her for her choice and the strength she has to do so @citenovel. This need for education as a source of "refuge," as Ramatoulaye puts it, can also be seen in the DHS Senegal Final Report. Within the report from the translated passage, the authors writing the insights on polygamy had this to say about education and its effect on the Union of Polygamy[@Sen1986]:
+Throughout the novel, you also get a chance to see what the female perspective is on polygamy. Looking first at the two main characters, Ramatoulaye and Aisstou, their approaches to polygamy were quite different. For example, as Aissatou found out her husband Mawdo had found himself a second wife, she divorced Mawdo. She focused on her education by continuing to read books and educating herself. Ramatoulaye writes to Aissatou, praising her for her choice and the strength she has to do so @citenovel. This need for education as a source of "refuge," as Ramatoulaye puts it, can also be seen in the DHS Senegal Final Report. Within the report from the translated passage, the authors writing the insights on polygamy had this to say about education and its effect on the Union of Polygamy[@Sen1986]:
 
 > *"Urbanization and education appear to be very discriminating factors of
 > differentiation. Overall, polygamy is more prevalent in rural areas (49.0 per cent)
